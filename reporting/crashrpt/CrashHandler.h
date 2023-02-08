@@ -307,7 +307,7 @@ public:
 	CString m_sSmtpPassword;        // SMTP password.
     CString m_sEmailSubject;       // E-mail subject.
     CString m_sEmailText;          // E-mail text.
-    UINT m_uPriorities[3];         // Delivery priorities.
+    UINT m_uPriorities[4];         // Delivery priorities.
     CString m_sPrivacyPolicyURL;   // Privacy policy URL.
     CString m_sPathToCrashSender;  // Path to CrashSender.exe
     CString m_sLangFileName;       // Language file.

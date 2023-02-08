@@ -2101,6 +2101,9 @@ BOOL CErrorReportSender::SendReport()
 	// Arrange priorities in reverse order
     std::multimap<int, int> order;
 
+    std::pair<int, int> pair4(m_CrashInfo.m_uPriorities[CR_SENTRY], CR_SENTRY);
+    order.insert(pair4);
+
     std::pair<int, int> pair3(m_CrashInfo.m_uPriorities[CR_SMAPI], CR_SMAPI);
     order.insert(pair3);
 
@@ -2132,6 +2135,8 @@ BOOL CErrorReportSender::SendReport()
             bResult = SendOverSMTP();
         else if(id==CR_SMAPI)
             bResult = SendOverSMAPI();
+        else if(id==CR_SENTRY)
+            bResult = SendOverSentry();
 
 		// Check if this attempt has failed
         if(bResult==FALSE)
@@ -2558,6 +2563,12 @@ BOOL CErrorReportSender::SendOverSMAPI()
         m_Assync.SetProgress(_T("Sent OK"), 100, false);
 
     return bSend;
+}
+
+BOOL CErrorReportSender::SendOverSentry()
+{
+    //__debugbreak();
+    return FALSE;
 }
 
 CString CErrorReportSender::GetLangStr(LPCTSTR szSection, LPCTSTR szName)

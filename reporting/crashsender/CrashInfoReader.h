@@ -269,7 +269,7 @@ public:
     CString     m_sRestartCmdLine;      // Command line for crashed app restart.
 	int         m_nRestartTimeout;      // Restart timeout.
     int         m_nMaxReportsPerDay;    // Maximum number of crash reports that will be sent per calendar day.
-    UINT        m_uPriorities[3];       // Error report delivery priorities.
+    UINT        m_uPriorities[4];       // Error report delivery priorities.
     CString     m_sPrivacyPolicyURL;    // Privacy policy URL.
     BOOL        m_bGenerateMinidump;    // Should we generate crash minidump file?
     MINIDUMP_TYPE m_MinidumpType;       // Minidump type.

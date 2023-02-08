@@ -24,7 +24,7 @@ be found in the Authors.txt file in the root of the source tree.
 CAppModule _Module;             // WTL's application module.
 
 int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int /*nCmdShow*/ = SW_SHOWDEFAULT)
-{
+{    
 	int nRet = 0; // Return code
 	CErrorReportDlg dlgErrorReport; // Error Report dialog
 	CResendDlg dlgResend; // Resend dialog
@@ -114,7 +114,7 @@ int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int /*nCmdShow*/ = SW_SHOWDEFAULT)
 }
 
 int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPTSTR lpstrCmdLine, int nCmdShow)
-{
+{    
     HRESULT hRes = ::CoInitialize(NULL);
     // If you are running on NT 4.0 or higher you can use the following call instead to
     // make the EXE free threaded. This means that calls come in on a random RPC thread.

@@ -206,6 +206,8 @@ private:
     // Sends error report over Simple MAPI.
     BOOL SendOverSMAPI();
 
+    BOOL SendOverSentry();
+
 	// Sends all recently queued error reports in turn.
 	BOOL SendRecentReports();
 

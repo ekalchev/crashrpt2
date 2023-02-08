@@ -45,7 +45,7 @@ CCrashHandler::CCrashHandler()
     m_MinidumpType = MiniDumpNormal;
     m_nSmtpPort = 25;
     m_nSmtpProxyPort = 2525;
-    memset(&m_uPriorities, 0, 3*sizeof(UINT));
+    memset(&m_uPriorities, 0, 4*sizeof(UINT));
     m_lpfnCallback = NULL;
 	m_bAddScreenshot = FALSE;
     m_dwScreenshotFlags = 0;
@@ -255,9 +255,9 @@ int CCrashHandler::Init(
 
     // Save crash report delivery priorities
     if(puPriorities!=NULL)
-        memcpy(&m_uPriorities, puPriorities, 3*sizeof(UINT));
+        memcpy(&m_uPriorities, puPriorities, 4*sizeof(UINT));
     else
-        memset(&m_uPriorities, 0, 3*sizeof(UINT));
+        memset(&m_uPriorities, 0, 4*sizeof(UINT));
 
     // Save privacy policy URL (if exists)
     if(lpcszPrivacyPolicyURL!=NULL)
@@ -553,7 +553,7 @@ CRASH_DESCRIPTION* CCrashHandler::PackCrashInfoIntoSharedMem(CSharedMem* pShared
     m_pTmpCrashDesc->m_bAddScreenshot = m_bAddScreenshot;
     m_pTmpCrashDesc->m_dwScreenshotFlags = m_dwScreenshotFlags;
 	m_pTmpCrashDesc->m_nJpegQuality = m_nJpegQuality;
-    memcpy(m_pTmpCrashDesc->m_uPriorities, m_uPriorities, sizeof(UINT)*3);
+    memcpy(m_pTmpCrashDesc->m_uPriorities, m_uPriorities, sizeof(UINT)*4);
 	m_pTmpCrashDesc->m_bAddVideo = m_bAddVideo;
 	m_pTmpCrashDesc->m_hWndVideoParent = m_hWndVideoParent;
 	m_pTmpCrashDesc->m_dwProcessId = GetCurrentProcessId();

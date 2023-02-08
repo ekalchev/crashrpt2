@@ -76,7 +76,7 @@ struct CRASH_DESCRIPTION
     DWORD m_dwInstallFlags;        // Flags passed to crInstall() function.
     int m_nSmtpPort;               // Smtp port.
     int m_nSmtpProxyPort;          // Smtp proxy port.
-    UINT m_uPriorities[3];         // Delivery priorities.
+    UINT m_uPriorities[4];         // Delivery priorities.
     MINIDUMP_TYPE m_MinidumpType;  // Minidump type.
     //BOOL m_bAppRestart;            // Packed into flags
     BOOL  m_bAddScreenshot;        // Add screenshot?

@@ -382,6 +382,7 @@ CCrashInfoReader::CCrashInfoReader()
 	m_bStoreZIPArchives = FALSE;
 	m_bSendRecentReports = FALSE;
 	m_bAppRestart = FALSE;
+    m_uPriorities[CR_SENTRY] = 4;
 	m_uPriorities[CR_HTTP] = 3;
 	m_uPriorities[CR_SMTP] = 2;
 	m_uPriorities[CR_SMAPI] = 1;
@@ -557,7 +558,7 @@ int CCrashInfoReader::UnpackCrashDescription(CErrorReportInfo& eri)
     m_nSmtpProxyPort = m_pCrashDesc->m_nSmtpProxyPort;
     UnpackString(m_pCrashDesc->m_dwEmailSubjectOffs, m_sEmailSubject);
     UnpackString(m_pCrashDesc->m_dwEmailTextOffs, m_sEmailText);
-    memcpy(m_uPriorities, m_pCrashDesc->m_uPriorities, sizeof(UINT)*3);
+    memcpy(m_uPriorities, m_pCrashDesc->m_uPriorities, sizeof(UINT)*4);
     UnpackString(m_pCrashDesc->m_dwPrivacyPolicyURLOffs, m_sPrivacyPolicyURL);
     UnpackString(m_pCrashDesc->m_dwLangFileNameOffs, m_sLangFileName);
     UnpackString(m_pCrashDesc->m_dwPathToDebugHelpDllOffs, m_sDbgHelpPath);
